@@ -1,7 +1,6 @@
 [
-  { "label": "Focus", "slug": "focus" },
   { "label": "Adopt", "slug": "adopt" },
   { "label": "Trial", "slug": "trial" },
-  { "label": "Evaluate", "slug": "evaluate" },
+  { "label": "Assess", "slug": "assess" },
   { "label": "Hold", "slug": "hold" }
 ]

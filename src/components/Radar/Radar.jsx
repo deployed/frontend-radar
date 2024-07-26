@@ -1,58 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import RadarDiagram from "radar-diagram";
 import "./radar.css";
-import { TweenMax } from "gsap";
-
+import { Tooltip } from "react-tooltip";
 const padding = 50;
-const Radar = ({ options, segments, rings, elements }) => {
+
+const Radar = ({
+  options,
+  segments,
+  rings,
+  elements,
+  techClicked,
+  setTechClicked,
+}) => {
   let svgRef = useRef(null);
   const [radarDiagram, setRadarDiagram] = useState(
     new RadarDiagram(options, { elements, rings, segments })
   );
 
-  const containerHeight = () => {
-    switch (options.totalAngle) {
-      case Math.PI:
-        return "50vw";
-      default:
-        return "95vw";
-    }
-  };
-
   useEffect(() => {
     const radar = new RadarDiagram(options, { elements, rings, segments });
-    console.log(radar);
     setRadarDiagram(radar);
   }, [options, segments, rings, elements]);
 
-  useEffect(() => {
-    if (options) {
-      let vb;
-      switch (options.totalAngle) {
-        case Math.PI:
-          vb = `${-padding} ${-padding} ${
-            radarDiagram.options.baseDimension + 2 * padding
-          } ${radarDiagram.options.baseDimension / 2 + padding}`;
-          break;
-        case Math.PI * 2:
-          vb = `${-padding} ${-padding} ${
-            radarDiagram.options.baseDimension + 2 * padding
-          } ${radarDiagram.options.baseDimension + 2 * padding}`;
-          break;
-        case Math.PI / 2:
-          vb = `${radarDiagram.options.baseDimension / 2} ${-padding} ${
-            (radarDiagram.options.baseDimension + 2 * padding) / 2
-          } ${(radarDiagram.options.baseDimension + 2 * padding) / 2}`;
-          break;
-        default:
-          break;
-      }
-      TweenMax.to(svgRef, 1, { attr: { viewBox: vb } });
-    }
-  }, [options, radarDiagram.options.baseDimension]);
-
   return (
-    <div className="radar-container" style={{ height: containerHeight() }}>
+    <div className="radar-container" style={{ height: "60vw" }}>
       <svg
         id="radar-plot"
         viewBox={`${-padding} ${-padding} ${
@@ -65,34 +36,31 @@ const Radar = ({ options, segments, rings, elements }) => {
           r={radarDiagram.options.baseDimension / 2}
           cx={radarDiagram.options.baseDimension / 2}
           cy={radarDiagram.options.baseDimension / 2}
-          fill="rgb(181, 191, 255)"
+          fill="#8dc0f7"
         ></circle>
-        <line
-          x1={radarDiagram.options.baseDimension / 2}
-          y1="0"
-          x2={radarDiagram.options.baseDimension / 2}
-          y2={radarDiagram.options.baseDimension}
-          stroke="#ddd"
-        />
-        <line
-          x1="0"
-          y1="499"
-          x2={radarDiagram.options.baseDimension}
-          y2={radarDiagram.options.baseDimension / 2}
-          stroke="#000"
-        />
-        {radarDiagram.ringAxes.map((ringAxis) => (
-          <circle
-            className="radar__ring"
-            key={ringAxis.slug}
-            cx={radarDiagram.options.baseDimension / 2}
-            cy={radarDiagram.options.baseDimension / 2}
-            r={ringAxis.j}
-            stroke="#aaa"
-            strokeWidth={1}
-            fill="#fff"
-            fillOpacity={0.3}
-          ></circle>
+        {radarDiagram.ringAxes.map((ringAxis, index) => (
+          <g key={ringAxis.slug}>
+            <circle
+              className="radar__ring"
+              cx={radarDiagram.options.baseDimension / 2}
+              cy={radarDiagram.options.baseDimension / 2}
+              r={ringAxis.j}
+              stroke="#aaa"
+              strokeWidth={1}
+              fill="#fff"
+              fillOpacity={0.3}
+            ></circle>
+            <text
+              fontSize={"30px"}
+              text-anchor="middle"
+              fill="#555"
+              x={radarDiagram.options.baseDimension / 2}
+              y={radarDiagram.options.baseDimension / 2 - ringAxis.j + 60}
+              dy="-0.5em"
+            >
+              {rings[index].slug}
+            </text>
+          </g>
         ))}
         {radarDiagram.segmentAxes.map((segAxis, idx) => (
           <g key={segAxis.slug}>
@@ -128,8 +96,6 @@ const Radar = ({ options, segments, rings, elements }) => {
                 fontWeight={"800"}
                 fontSize={`${radarDiagram.options.totalAngle / 3 + 0.5}em`}
                 fontFamily={"Sans-serif"}
-                stroke={segAxis.color}
-                strokeWidth={1}
                 startOffset={"50%"}
                 textAnchor={"middle"}
               >
@@ -138,34 +104,50 @@ const Radar = ({ options, segments, rings, elements }) => {
             </text>
           </g>
         ))}
-        {radarDiagram.dots.map((dot) => (
-          <g
-            key={dot.label}
-            className="radar__dot"
-            style={{ transform: `translate(${dot.x}px, ${dot.y}px)` }}
-          >
-            {/* <path
-              fill={dot.color}
-              transform="scale(0.1)"
-              stroke="black"
-              d="M131.2,101.7c4.1,56.2-28.6,86.3-64.6,86.3S-3.7,157.2,1,101.7C6,43,45,1,66.1,1C86,1,127,44,131.2,101.7z"
-            ></path> */}
-            <circle
-              r={dot.r}
-              stroke={"#aaa"}
-              strokeWidth={1}
-              fill={dot.color}
-            ></circle>
-            <text text-anchor="middle" className="radar__dot__label">
-              {dot.label.substr(0, 15)}
-            </text>
-          </g>
-        ))}
+
+        {radarDiagram.dots.map((dot, index) => {
+          const getRandomOffset = (range) => (Math.random() - 0.5) * 2 * range;
+
+          const range = 10;
+
+          const x = dot.x + getRandomOffset(range);
+          const y = dot.y + getRandomOffset(range);
+
+          return (
+            <g
+              onMouseEnter={() => setTechClicked(index)}
+              key={dot.label}
+              data-tooltip-id="my-tooltip"
+              className="radar__dot"
+              style={{ transform: `translate(${x}px, ${y}px)` }}
+            >
+              <circle
+                className="dot"
+                r={15}
+                stroke={"#aaa"}
+                strokeWidth={1}
+                fill={dot.color}
+              ></circle>
+
+              <text
+                y={-10}
+                x={-1}
+                textAnchor="middle"
+                className="radar__dot__label"
+              >
+                {index}
+              </text>
+            </g>
+          );
+        })}
       </svg>
+      <Tooltip
+        style={{ fontSize: "8px" }}
+        id="my-tooltip"
+        content={elements[techClicked].label}
+      />
     </div>
   );
 };
-
-Radar.propTypes = {};
 
 export default Radar;

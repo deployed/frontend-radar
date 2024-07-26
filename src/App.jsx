@@ -1,77 +1,101 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
+import Legend from "./components/Legend/Legend";
 import Radar from "./components/Radar/Radar";
-import elements from "./data/elements.json";
-import segments from "./data/segments.json";
-import rings from "./data/rings.json";
-function App() {
-  const [radarConfig, setRadarConfig] = useState({
-    totalAngle: Math.PI,
-    padding: 20,
-    minPlotRadius: 120,
-  });
-  const [radarSegments] = useState(segments);
-  const [radarRings] = useState(rings);
-  const [radarElements] = useState(elements);
-  const handleTotalAngleChange = (e) => {
-    setRadarConfig({ ...radarConfig, totalAngle: parseFloat(e.target.value) });
-  };
-  const handleMinPlotRadius = (e) => {
-    setRadarConfig({ ...radarConfig, minPlotRadius: parseInt(e.target.value) });
-  };
-  const handlePaddingChange = (e) => {
-    setRadarConfig({
-      ...radarConfig,
-      padding: parseInt(e.target.value),
-    });
-  };
-  return (
-    <div className="App">
-      <header>
-        <h1>React Radar</h1>
-        <section>
-          <fieldset>
-            <legend>Radar Config</legend>
-            <div className="configs">
-              <div>
-                <label htmlFor="totalAngle">Total Angle</label>
-                <select id="totalAngle" onChange={handleTotalAngleChange}>
-                  <option value={Math.PI}>Half circle</option>
-                  <option value={Math.PI * 2}>Full Circle</option>
-                  <option value={Math.PI / 2}>Quarter of a circle</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="minPlotRadius">Minimum plot radius</label>
-                <input
-                  id="minPlotRadius"
-                  onChange={handleMinPlotRadius}
-                  type="range"
-                  min="50"
-                  max="250"
-                />
-              </div>
-              <div>
-                <label htmlFor="outwardPadding">Outer Padding</label>
-                <input
-                  id="outwardPadding"
-                  onChange={handlePaddingChange}
-                  type="range"
-                  min="0"
-                  max="50"
-                />
-              </div>
-            </div>
-          </fieldset>
-        </section>
-      </header>
+import segmentsFront from "./data-front/segments.json";
+import ringsFront from "./data-front/rings.json";
+import elementsFront from "./data-front/elements.json";
+import segmentsBack from "./data-back/segments.json";
+import ringsBack from "./data-back/rings.json";
+import elementsBack from "./data-back/elements.json";
 
+const data = {
+  FRONT: {
+    segments: segmentsFront,
+    rings: ringsFront,
+    elements: elementsFront,
+  },
+  BACK: {
+    segments: segmentsBack,
+    rings: ringsBack,
+    elements: elementsBack,
+  },
+};
+
+const Header = ({ team, setTeam }) => (
+  <div className="header">
+    <div>Deployed Tech Radar</div>
+    <div className="header-container">
+      <div
+        onClick={() => setTeam("FRONT")}
+        className={`header-item ${team === "FRONT" ? "active" : ""}`}
+      >
+        Frontasie i Mobisie
+      </div>
+      <div
+        onClick={() => setTeam("BACK")}
+        className={`header-item ${team === "BACK" ? "active" : ""}`}
+      >
+        Bakusie
+      </div>
+    </div>
+  </div>
+);
+
+const AppContent = ({ team, techClicked, setTechClicked }) => {
+  const radarConfig = {
+    totalAngle: Math.PI * 2,
+    padding: -5,
+    minPlotRadius: 100,
+  };
+
+  const { segments, rings, elements } = data[team] || {};
+
+  console.log(elements);
+  const halfLength = Math.ceil(segments.length / 2);
+  const segmentsLeft = segments.slice(0, halfLength);
+  const segmentsRight = segments.slice(halfLength);
+
+  return (
+    <div className="app-content">
+      <Legend
+        techClicked={techClicked}
+        setTechClicked={setTechClicked}
+        segments={segmentsLeft}
+        rings={rings}
+        elements={elements}
+      />
       <Radar
+        techClicked={techClicked}
+        setTechClicked={setTechClicked}
         options={radarConfig}
-        segments={radarSegments}
-        rings={radarRings}
-        elements={radarElements}
-      ></Radar>
+        segments={segments}
+        rings={rings}
+        elements={elements}
+      />
+      <Legend
+        techClicked={techClicked}
+        setTechClicked={setTechClicked}
+        segments={segmentsRight}
+        rings={rings}
+        elements={elements}
+      />
+    </div>
+  );
+};
+function App() {
+  const [team, setTeam] = useState("FRONT");
+  const [techClicked, setTechClicked] = useState(0);
+
+  return (
+    <div>
+      <Header team={team} setTeam={setTeam} />
+      <div className="divider" />
+      <AppContent
+        team={team}
+        techClicked={techClicked}
+        setTechClicked={setTechClicked}
+      />
     </div>
   );
 }

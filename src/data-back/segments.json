@@ -1,0 +1,14 @@
+[
+  { "label": "Languages", "slug": "languages", "color": "#fa9" },
+  { "label": "Framework", "slug": "framework", "color": "#ad0" },
+  {
+    "label": "Datastores",
+    "slug": "datastores",
+    "color": "#7dc"
+  },
+  {
+    "label": "Infrastructure",
+    "slug": "infrastructure",
+    "color": "#7dc"
+  }
+]

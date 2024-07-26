@@ -1,10 +1,39 @@
-.configs {
+.header {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
 }
 
-.configs > div {
-  margin-right: 2rem;
+.header-item.active {
+  background-color: #ff6f8f; /* Zmieniony kolor dla aktywnego przycisku */
+  opacity: 0.8;
 }
-.configs > label {
-  margin-right: 1rem;
+
+.header-item {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #da4167;
+  color: #fff;
+  font-size: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.divider {
+  height: 1px;
+  background-color: #555;
+  margin: 5px;
+}
+
+.app-content {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+  align-items: center;
 }
