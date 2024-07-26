@@ -1,0 +1,22 @@
+[
+  {
+    "label": "W",
+    "segment": "framework",
+    "ring": "adopt"
+  },
+  {
+    "label": "X",
+    "segment": "languages",
+    "ring": "adopt"
+  },
+  {
+    "label": "Y",
+    "segment": "datastores",
+    "ring": "adopt"
+  },
+  {
+    "label": "Z",
+    "segment": "infrastructure",
+    "ring": "trial"
+  }
+]

@@ -1,0 +1,32 @@
+.segment {
+  color: #000; /* Default color; can be overridden by inline styles */
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.rings-container {
+  display: grid;
+  grid-template-columns: minmax(20px, 80px) minmax(20px, 70px);
+  grid-gap: 13px;
+}
+
+.ring-label {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.elements-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.element-item {
+  font-size: 7px;
+  cursor: pointer;
+}
+
+.element-item.active {
+  font-weight: bold;
+}

@@ -1,8 +1,8 @@
 .radar-container {
-  height: 93vw;
-  max-height: calc(100vh - 150px);
+  max-height: calc(110vh - 150px);
   transition: height 1s;
   display: flex;
+  color: "#ccc";
 }
 
 .radar-container svg {
@@ -16,10 +16,10 @@
 }
 
 .radar__dot__label {
-  fill: #555;
+  fill: #000;
   transform: translate(0, 15px);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.5em;
+  font-size: 12px;
 }
 
 .radar__segment-axis {
@@ -33,4 +33,13 @@
 
 .radar__ring {
   transition: r 0.5s;
+}
+
+.dot {
+  transition: transform 1s;
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: scale(1.2); /* Przykładowa transformacja, powiększa element */
 }

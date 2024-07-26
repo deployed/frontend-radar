@@ -1,0 +1,197 @@
+[
+  {
+    "label": "React",
+    "segment": "frontend",
+    "ring": "adopt"
+  },
+  {
+    "label": "React Native",
+    "segment": "mobile",
+    "ring": "adopt"
+  },
+  {
+    "label": "Expo",
+    "segment": "mobile",
+    "ring": "adopt"
+  },
+  {
+    "label": "Vue",
+    "segment": "frontend",
+    "ring": "trial"
+  },
+  {
+    "label": "Tuya Mini Apps",
+    "segment": "mobile",
+    "ring": "trial"
+  },
+  {
+    "label": "htmx",
+    "segment": "frontend",
+    "ring": "assess"
+  },
+  {
+    "label": "Angular",
+    "segment": "frontend",
+    "ring": "hold"
+  },
+  {
+    "label": "Capacitor",
+    "segment": "mobile",
+    "ring": "hold"
+  },
+  {
+    "label": "Cordova",
+    "segment": "mobile",
+    "ring": "hold"
+  },
+  {
+    "label": "MobX",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "Context API",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "zustand",
+    "segment": "common",
+    "ring": "trial"
+  },
+  {
+    "label": "xstate",
+    "segment": "frontend",
+    "ring": "trial"
+  },
+  {
+    "label": "redux",
+    "segment": "common",
+    "ring": "hold"
+  },
+  {
+    "label": "react-i18next/i18next",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "react-intl",
+    "segment": "frontend",
+    "ring": "trial"
+  },
+  {
+    "label": "react-hook-form",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "formik",
+    "segment": "frontend",
+    "ring": "hold"
+  },
+  {
+    "label": "zod",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "yup",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "tailwind",
+    "segment": "frontend",
+    "ring": "adopt"
+  },
+  {
+    "label": "CSS Modules",
+    "segment": "frontend",
+    "ring": "adopt"
+  },
+  {
+    "label": "SCSS",
+    "segment": "frontend",
+    "ring": "adopt"
+  },
+  {
+    "label": "StyleSheet API",
+    "segment": "mobile",
+    "ring": "adopt"
+  },
+  {
+    "label": "headless-ui",
+    "segment": "frontend",
+    "ring": "trial"
+  },
+  {
+    "label": "radix",
+    "segment": "frontend",
+    "ring": "trial"
+  },
+  {
+    "label": "react-native-paper",
+    "segment": "mobile",
+    "ring": "trial"
+  },
+  {
+    "label": "unistyles",
+    "segment": "frontend",
+    "ring": "assess"
+  },
+  {
+    "label": "shadcn",
+    "segment": "frontend",
+    "ring": "assess"
+  },
+  {
+    "label": "tamagui",
+    "segment": "frontend",
+    "ring": "assess"
+  },
+  {
+    "label": "@mui",
+    "segment": "frontend",
+    "ring": "hold"
+  },
+  {
+    "label": "styled-components",
+    "segment": "frontend",
+    "ring": "hold"
+  },
+  {
+    "label": "CSS in JS",
+    "segment": "frontend",
+    "ring": "hold"
+  },
+  {
+    "label": "Native Base",
+    "segment": "mobile",
+    "ring": "hold"
+  },
+  {
+    "label": "axios",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "apollo-client",
+    "segment": "frontend",
+    "ring": "adopt"
+  },
+  {
+    "label": "@tenstack/react-query",
+    "segment": "common",
+    "ring": "adopt"
+  },
+  {
+    "label": "graphql.tada",
+    "segment": "frontend",
+    "ring": "assess"
+  },
+  {
+    "label": "trpc",
+    "segment": "frontend",
+    "ring": "assess"
+  }
+]
