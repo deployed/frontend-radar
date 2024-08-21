@@ -22,6 +22,8 @@ const Radar = ({
     setRadarDiagram(radar);
   }, [options, segments, rings, elements]);
 
+  console.log(techClicked);
+
   return (
     <div className="radar-container" style={{ height: "60vw" }}>
       <svg
@@ -117,7 +119,7 @@ const Radar = ({
             <g
               onMouseEnter={() => setTechClicked(index)}
               key={dot.label}
-              data-tooltip-id="my-tooltip"
+              data-tooltip-id={`my-tooltip-${index}`}
               className="radar__dot"
               style={{ transform: `translate(${x}px, ${y}px)` }}
             >
@@ -143,8 +145,9 @@ const Radar = ({
       </svg>
       <Tooltip
         style={{ fontSize: "8px" }}
-        id="my-tooltip"
+        id={`my-tooltip-${techClicked}`}
         content={elements[techClicked].label}
+        isOpen={true}
       />
     </div>
   );

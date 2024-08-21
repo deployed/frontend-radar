@@ -51,7 +51,6 @@ const AppContent = ({ team, techClicked, setTechClicked }) => {
 
   const { segments, rings, elements } = data[team] || {};
 
-  console.log(elements);
   const halfLength = Math.ceil(segments.length / 2);
   const segmentsLeft = segments.slice(0, halfLength);
   const segmentsRight = segments.slice(halfLength);
