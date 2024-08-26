@@ -13,14 +13,14 @@ The radar uses the [radar-diagram](https://www.npmjs.com/package/radar-diagram) 
 * nodejs v18
 
 ## Installation
-1. Node version 20
-2. To install all the necessary dependencies, run the following command:
+
+1. To install all the necessary dependencies, run the following command:
 
 `npm install`
 
 
 ## Running the Project
-3. To start the development server, use the following command:
+2. To start the development server, use the following command:
 
 `npm run dev`
 
