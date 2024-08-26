@@ -1,8 +1,27 @@
-// Helper function to group elements by segment and ring
-export const groupElements = (elements, segments, rings) => {
-  const grouped = {};
+type segments = { label: string; slug: string; color: string }[];
+type rings = { label: string; slug: string }[];
+type elements = { label: string; segment: string; ring: string }[];
 
-  // Initialize the grouped object with segments and rings
+type GroupedElements = {
+  [segmentSlug: string]: {
+    label: string;
+    color: string;
+    rings: {
+      [ringSlug: string]: {
+        label: string;
+        elements: { label: string; index: number }[];
+      };
+    };
+  };
+};
+
+export const groupElements = (
+  elements: elements,
+  segments: segments,
+  rings: rings
+): GroupedElements => {
+  const grouped: GroupedElements = {};
+
   segments.forEach((segment) => {
     grouped[segment.slug] = {
       label: segment.label,

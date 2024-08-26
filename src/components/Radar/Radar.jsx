@@ -1,31 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import RadarDiagram from "radar-diagram";
+import { TechContext } from "../../context/Context";
 import "./radar.css";
 import { Tooltip } from "react-tooltip";
+
 const padding = 50;
 
-const Radar = ({
-  options,
-  segments,
-  rings,
-  elements,
-  techClicked,
-  setTechClicked,
-}) => {
+const Radar = ({ options, segments, rings, elements }) => {
   let svgRef = useRef(null);
   const [radarDiagram, setRadarDiagram] = useState(
     new RadarDiagram(options, { elements, rings, segments })
   );
+  const { techClicked, setTechClicked } = useContext(TechContext);
 
   useEffect(() => {
     const radar = new RadarDiagram(options, { elements, rings, segments });
     setRadarDiagram(radar);
   }, [options, segments, rings, elements]);
 
-  console.log(techClicked);
-
   return (
-    <div className="radar-container" style={{ height: "60vw" }}>
+    <div className="radar-container" style={{ height: "550px" }}>
       <svg
         id="radar-plot"
         viewBox={`${-padding} ${-padding} ${
@@ -144,7 +138,7 @@ const Radar = ({
         })}
       </svg>
       <Tooltip
-        style={{ fontSize: "8px" }}
+        style={{ fontSize: "12px" }}
         id={`my-tooltip-${techClicked}`}
         content={elements[techClicked].label}
         isOpen={true}

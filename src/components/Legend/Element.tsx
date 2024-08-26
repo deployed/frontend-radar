@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./legend.css";
-import { Tooltip } from "react-tooltip";
-const Element = ({ element, setTechClicked, techClicked }) => {
+import { TechContext } from "../../context/Context";
+
+const Element = ({ element }) => {
+  const { techClicked, setTechClicked } = useContext(TechContext);
+
   return (
     <div>
       <li

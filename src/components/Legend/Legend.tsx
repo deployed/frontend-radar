@@ -2,22 +2,16 @@ import React from "react";
 import "./legend.css";
 import Segment from "./Segment";
 import { groupElements } from "./helper";
-const Legend = ({ segments, rings, elements, setTechClicked, techClicked }) => {
+import { LegendProps } from "./types";
+
+const Legend = ({ segments, rings, elements }: LegendProps) => {
   const groupedData = groupElements(elements, segments, rings);
 
   return (
-    <div className="legend-container">
+    <div>
       {Object.keys(groupedData).map((segmentSlug) => {
         const segment = groupedData[segmentSlug];
-        return (
-          <Segment
-            key={segmentSlug}
-            segment={segment}
-            rings={segment.rings}
-            setTechClicked={setTechClicked}
-            techClicked={techClicked}
-          />
-        );
+        return <Segment key={segmentSlug} segment={segment} />;
       })}
     </div>
   );
