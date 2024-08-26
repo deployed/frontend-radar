@@ -1,9 +1,23 @@
+# Project Overview
+This project is built using Vite and React. 
+
 # Deployed Radar Diagram
 
-1. Add the lib to your dependencies:
+To update the radar, please add specific technologies to the `data-front/elements.json` or `data-back/elements.json` file.
 
-` run npm install radar-diagram`
+The radar is customizable. You can also add additional rings and divide it into smaller sections.
 
-2. Run the project:
+The radar uses the [radar-diagram](https://www.npmjs.com/package/radar-diagram) library.
+
+## Installation
+
+1. To install all the necessary dependencies, run the following command:
+
+`npm install`
+
+
+## Running the Project
+2. To start the development server, use the following command:
 
 `npm run dev`
+
