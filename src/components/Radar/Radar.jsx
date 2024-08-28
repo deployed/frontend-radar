@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-// TODO: asda
+// TODO: Copy the class Radar from 'radar-diagram' and add Typescript there. After that change the Radar component - add Typescript.
 import RadarDiagram from 'radar-diagram';
 import {Tooltip} from 'react-tooltip';
 
