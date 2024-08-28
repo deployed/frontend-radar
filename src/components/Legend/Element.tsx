@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
 import {useTechContext} from '../../context/Context';
 import './legend.css';

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, useContext} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 // TODO: asda
 import RadarDiagram from 'radar-diagram';
