@@ -20,7 +20,7 @@ type SegmentProps = {
 };
 
 const Segment = ({segment}: SegmentProps) => {
-  const ringsKyes = Object.keys(segment.rings);
+  const ringsKeys = Object.keys(segment.rings);
 
   return (
     <div className="segment-container">
@@ -28,7 +28,7 @@ const Segment = ({segment}: SegmentProps) => {
         {segment.label}
       </div>
       <div className="rings-container">
-        {ringsKyes.map((ringSlug) => {
+        {ringsKeys.map((ringSlug) => {
           const ring = segment.rings[ringSlug];
           return <Ring key={ringSlug} ring={ring} color={segment.color} />;
         })}
