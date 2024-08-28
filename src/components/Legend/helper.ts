@@ -1,6 +1,6 @@
-type segments = { label: string; slug: string; color: string }[];
-type rings = { label: string; slug: string }[];
-type elements = { label: string; segment: string; ring: string }[];
+type segments = {label: string; slug: string; color: string}[];
+type rings = {label: string; slug: string}[];
+type elements = {label: string; segment: string; ring: string}[];
 
 type GroupedElements = {
   [segmentSlug: string]: {
@@ -9,7 +9,7 @@ type GroupedElements = {
     rings: {
       [ringSlug: string]: {
         label: string;
-        elements: { label: string; index: number }[];
+        elements: {label: string; index: number}[];
       };
     };
   };
@@ -18,7 +18,7 @@ type GroupedElements = {
 export const groupElements = (
   elements: elements,
   segments: segments,
-  rings: rings
+  rings: rings,
 ): GroupedElements => {
   const grouped: GroupedElements = {};
 
@@ -43,7 +43,7 @@ export const groupElements = (
     if (segment) {
       const ring = segment.rings[element.ring];
       if (ring) {
-        ring.elements.push({ label: element.label, index: index });
+        ring.elements.push({label: element.label, index: index});
       }
     }
   });

@@ -1,9 +1,9 @@
 [
-  { "label": "Common", "slug": "common", "color": "#B4C292" },
-  { "label": "Mobile", "slug": "mobile", "color": "#D17A22" },
+  {"label": "Common", "slug": "common", "color": "#16b969"},
+  {"label": "Mobile", "slug": "mobile", "color": "#ff892e"},
   {
     "label": "Frontend",
     "slug": "frontend",
-    "color": "#c08497"
+    "color": "#c42eff"
   }
 ]

@@ -1,6 +1,7 @@
-import React from "react";
-import Element from "./Element";
-import "./legend.css";
+import React from 'react';
+
+import Element from './Element';
+import './legend.css';
 
 type RingProps = {
   ring: {
@@ -10,15 +11,19 @@ type RingProps = {
       index: number;
     }[];
   };
+  color: string;
 };
 
-const Ring = ({ ring }: RingProps) => {
+const Ring = ({ring, color}: RingProps) => {
+  const {elements, label} = ring;
+
   return (
-    <div>
-      <div className="ring-label">{ring.label}</div>
+    <div className="ring-container">
+      <div className="ring-label">{label}</div>
       <ul className="elements-list">
-        {ring.elements.map((element) => (
-          <Element key={element.index} element={element} />
+        {elements.length === 0 ? <div className="default-label">No technology</div> : null}
+        {elements.map((element) => (
+          <Element key={element.index} element={element} color={color} />
         ))}
       </ul>
     </div>

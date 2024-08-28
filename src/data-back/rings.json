@@ -1,6 +1,6 @@
 [
-  { "label": "Adopt", "slug": "adopt" },
-  { "label": "Trial", "slug": "trial" },
-  { "label": "Assess", "slug": "assess" },
-  { "label": "Hold", "slug": "hold" }
+  {"label": "Adopt", "slug": "adopt"},
+  {"label": "Trial", "slug": "trial"},
+  {"label": "Assess", "slug": "assess"},
+  {"label": "Hold", "slug": "hold"}
 ]

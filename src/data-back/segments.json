@@ -1,6 +1,6 @@
 [
-  { "label": "Languages", "slug": "languages", "color": "#fa9" },
-  { "label": "Framework", "slug": "framework", "color": "#ad0" },
+  {"label": "Languages", "slug": "languages", "color": "#fa9"},
+  {"label": "Framework", "slug": "framework", "color": "#ad0"},
   {
     "label": "Datastores",
     "slug": "datastores",

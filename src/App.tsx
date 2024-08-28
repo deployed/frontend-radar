@@ -1,12 +1,13 @@
-import React, { useState, useContext } from "react";
-import "./App.css";
-import { TechProvider } from "./context/Context";
-import { RadarContent } from "./components/RadarContent";
-import { Header } from "./components/Header/Header";
+import React, {useState, useContext} from 'react';
+
+import './App.css';
+import {Header} from './components/Header/Header';
+import {RadarContent} from './components/RadarContent';
+import {TechProvider} from './context/Context';
 
 export enum Team {
-  FRONT = "front",
-  BACK = "back",
+  FRONT = 'front',
+  BACK = 'back',
 }
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
     <div>
       <TechProvider>
         <Header team={team} setTeam={setTeam} />
-        <div className="divider" />
         <RadarContent team={team} />
       </TechProvider>
     </div>

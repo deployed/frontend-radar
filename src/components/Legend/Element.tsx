@@ -1,19 +1,25 @@
-import React, { useContext } from "react";
-import "./legend.css";
-import { TechContext } from "../../context/Context";
+import React, {useContext} from 'react';
 
-const Element = ({ element }) => {
-  const { techClicked, setTechClicked } = useContext(TechContext);
+import {useTechContext} from '../../context/Context';
+import './legend.css';
+
+interface ElementProps {
+  element: {index: number; label: string};
+  color: string;
+}
+
+const Element = ({element, color}: ElementProps) => {
+  const {techClicked, setTechClicked} = useTechContext();
 
   return (
     <div>
       <li
-        className={`element-item ${
-          techClicked === element.index ? "active" : ""
-        }`}
-        onClick={() => setTechClicked(element.index)}
-      >
-        {element.index}. {element.label}
+        className={`element-item ${techClicked === element.index ? 'active' : ''}`}
+        style={{
+          backgroundColor: techClicked === element.index ? color : '#fff',
+        }}
+        onClick={() => setTechClicked(element.index)}>
+        {element.index + 1}. {element.label}
       </li>
     </div>
   );

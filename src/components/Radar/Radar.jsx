@@ -1,39 +1,40 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
-import RadarDiagram from "radar-diagram";
-import { TechContext } from "../../context/Context";
-import "./radar.css";
-import { Tooltip } from "react-tooltip";
+import React, {useEffect, useRef, useState, useContext} from 'react';
+
+// TODO: asda
+import RadarDiagram from 'radar-diagram';
+import {Tooltip} from 'react-tooltip';
+
+import {useTechContext} from '../../context/Context';
+import './radar.css';
 
 const padding = 50;
 
-const Radar = ({ options, segments, rings, elements }) => {
+const Radar = ({options, segments, rings, elements}) => {
   let svgRef = useRef(null);
   const [radarDiagram, setRadarDiagram] = useState(
-    new RadarDiagram(options, { elements, rings, segments })
+    new RadarDiagram(options, {elements, rings, segments}),
   );
-  const { techClicked, setTechClicked } = useContext(TechContext);
+  const {techClicked, setTechClicked} = useTechContext();
 
   useEffect(() => {
-    const radar = new RadarDiagram(options, { elements, rings, segments });
+    const radar = new RadarDiagram(options, {elements, rings, segments});
     setRadarDiagram(radar);
   }, [options, segments, rings, elements]);
 
   return (
-    <div className="radar-container" style={{ height: "550px" }}>
+    <div className="radar-container" style={{flex: 1}}>
       <svg
         id="radar-plot"
         viewBox={`${-padding} ${-padding} ${
           radarDiagram.options.baseDimension + 2 * padding
         } ${radarDiagram.options.baseDimension + 2 * padding}`}
         xmlns="http://www.w3.org/2000/svg"
-        ref={(el) => (svgRef = el)}
-      >
+        ref={(el) => (svgRef = el)}>
         <circle
           r={radarDiagram.options.baseDimension / 2}
           cx={radarDiagram.options.baseDimension / 2}
           cy={radarDiagram.options.baseDimension / 2}
-          fill="#8dc0f7"
-        ></circle>
+          fill="#b5c5df"></circle>
         {radarDiagram.ringAxes.map((ringAxis, index) => (
           <g key={ringAxis.slug}>
             <circle
@@ -43,17 +44,15 @@ const Radar = ({ options, segments, rings, elements }) => {
               r={ringAxis.j}
               stroke="#aaa"
               strokeWidth={1}
-              fill="#fff"
-              fillOpacity={0.3}
-            ></circle>
+              fill="#f1f4f9"
+              fillOpacity={0.3}></circle>
             <text
-              fontSize={"30px"}
+              fontSize={'30px'}
               text-anchor="middle"
               fill="#555"
               x={radarDiagram.options.baseDimension / 2}
               y={radarDiagram.options.baseDimension / 2 - ringAxis.j + 60}
-              dy="-0.5em"
-            >
+              dy="-0.5em">
               {rings[index].slug}
             </text>
           </g>
@@ -66,35 +65,31 @@ const Radar = ({ options, segments, rings, elements }) => {
               x2={segAxis.axis.x2}
               y1={segAxis.axis.y1}
               y2={segAxis.axis.y2}
-              stroke={"#aaa"}
-              strokeWidth={1}
-            ></line>
+              stroke={'#aaa'}
+              strokeWidth={1}></line>
 
             <path
               className="radar__segment__path"
-              id={"label-path-" + segAxis.slug}
+              id={'label-path-' + segAxis.slug}
               d={radarDiagram.getSegmentLabelPathBase()}
-              fill={"none"}
+              fill={'none'}
               stroke={segAxis.color}
               strokeWidth={15}
               style={{
                 transform: `rotate(${
-                  (-idx * radarDiagram.options.totalAngle) /
-                  radarDiagram.segments.length
+                  (-idx * radarDiagram.options.totalAngle) / radarDiagram.segments.length
                 }rad)`,
-              }}
-            ></path>
+              }}></path>
 
             <text>
               <textPath
                 href={`#label-path-${segAxis.slug}`}
-                fill={"#555"}
-                fontWeight={"800"}
+                fill={'#555'}
+                fontWeight={'800'}
                 fontSize={`${radarDiagram.options.totalAngle / 3 + 0.5}em`}
-                fontFamily={"Sans-serif"}
-                startOffset={"50%"}
-                textAnchor={"middle"}
-              >
+                fontFamily={'Sans-serif'}
+                startOffset={'50%'}
+                textAnchor={'middle'}>
                 {segAxis.label}
               </textPath>
             </text>
@@ -115,33 +110,26 @@ const Radar = ({ options, segments, rings, elements }) => {
               key={dot.label}
               data-tooltip-id={`my-tooltip-${index}`}
               className="radar__dot"
-              style={{ transform: `translate(${x}px, ${y}px)` }}
-            >
+              style={{transform: `translate(${x}px, ${y}px)`}}>
               <circle
                 className="dot"
                 r={15}
-                stroke={"#aaa"}
+                stroke={'#aaa'}
                 strokeWidth={1}
-                fill={dot.color}
-              ></circle>
+                fill={dot.color}></circle>
 
-              <text
-                y={-10}
-                x={-1}
-                textAnchor="middle"
-                className="radar__dot__label"
-              >
-                {index}
+              <text y={-10} x={-1} textAnchor="middle" className="radar__dot__label">
+                {index + 1}
               </text>
             </g>
           );
         })}
       </svg>
       <Tooltip
-        style={{ fontSize: "12px" }}
+        style={{fontSize: '12px'}}
         id={`my-tooltip-${techClicked}`}
-        content={elements[techClicked].label}
-        isOpen={true}
+        content={techClicked >= 0 && elements[techClicked].label}
+        isOpen={techClicked >= 0 ? true : false}
       />
     </div>
   );

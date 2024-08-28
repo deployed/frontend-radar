@@ -2,7 +2,7 @@
   max-height: calc(110vh - 150px);
   transition: height 1s;
   display: flex;
-  color: "#ccc";
+  color: '#ccc';
 }
 
 .radar-container svg {
@@ -27,7 +27,9 @@
 }
 
 .radar__segment__path {
-  transition: transform 1s, d 1s;
+  transition:
+    transform 1s,
+    d 1s;
   transform-origin: 500px 500px;
 }
 
@@ -41,5 +43,5 @@
 }
 
 .dot:hover {
-  transform: scale(1.2); /* Przykładowa transformacja, powiększa element */
+  transform: scale(2);
 }

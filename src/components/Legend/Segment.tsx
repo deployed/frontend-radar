@@ -1,6 +1,7 @@
-import React from "react";
-import Ring from "./Ring";
-import "./legend.css";
+import React from 'react';
+
+import Ring from './Ring';
+import './legend.css';
 
 type SegmentProps = {
   segment: {
@@ -18,16 +19,18 @@ type SegmentProps = {
   };
 };
 
-const Segment = ({ segment }: SegmentProps) => {
+const Segment = ({segment}: SegmentProps) => {
+  const ringsKyes = Object.keys(segment.rings);
+
   return (
     <div className="segment-container">
-      <div className="segment" style={{ color: segment.color }}>
+      <div className="segment" style={{color: segment.color}}>
         {segment.label}
       </div>
       <div className="rings-container">
-        {Object.keys(segment.rings).map((ringSlug) => {
+        {ringsKyes.map((ringSlug) => {
           const ring = segment.rings[ringSlug];
-          return <Ring key={ringSlug} ring={ring} />;
+          return <Ring key={ringSlug} ring={ring} color={segment.color} />;
         })}
       </div>
     </div>

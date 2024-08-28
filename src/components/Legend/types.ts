@@ -4,8 +4,8 @@ export type LegendProps = {
   elements: Element[];
 };
 
-export type Segment = { label: string; slug: string; color: string };
+export type Segment = {label: string; slug: string; color: string};
 
-export type Ring = { label: string; slug: string };
+export type Ring = {label: string; slug: string};
 
-export type Element = { label: string; segment: string; ring: string };
+export type Element = {label: string; segment: string; ring: string};
