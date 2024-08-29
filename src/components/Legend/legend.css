@@ -1,18 +1,33 @@
 .segment {
-  color: #000; /* Default color; can be overridden by inline styles */
-  font-size: 12px;
+  font-size: 34px;
   font-weight: bold;
   margin-bottom: 5px;
 }
+.segment-container {
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #f7f8fb;
+}
 
 .rings-container {
-  display: grid;
-  grid-template-columns: minmax(20px, 80px) minmax(20px, 70px);
-  grid-gap: 13px;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-around;
+}
+
+.ring-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 300px;
+  padding: 2px;
+  background-color: #fff;
+  border-radius: 20px;
 }
 
 .ring-label {
-  font-size: 10px;
+  text-align: center;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -23,10 +38,16 @@
 }
 
 .element-item {
-  font-size: 7px;
+  font-size: 18px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .element-item.active {
-  font-weight: bold;
+  color: #fff;
+}
+
+.default-label {
+  font-size: 18px;
+  color: #e6e6e6;
 }
