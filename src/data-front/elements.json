@@ -2,196 +2,235 @@
   {
     "label": "React",
     "segment": "frontend",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://react.dev/learn"
   },
   {
     "label": "React Native",
     "segment": "mobile",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://reactnative.dev/"
   },
   {
     "label": "Expo",
     "segment": "mobile",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://docs.expo.dev/"
   },
   {
     "label": "Vue",
     "segment": "frontend",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://vuejs.org/"
   },
   {
     "label": "Tuya Mini Apps",
     "segment": "mobile",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://developer.tuya.com/en/miniapp/develop/miniapp/guide/start/smart"
   },
   {
     "label": "htmx",
     "segment": "frontend",
-    "ring": "assess"
+    "ring": "assess",
+    "link": "https://htmx.org/"
   },
   {
     "label": "Angular",
     "segment": "frontend",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://angular.dev/"
   },
   {
     "label": "Capacitor",
     "segment": "mobile",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://capacitorjs.com/"
   },
   {
     "label": "Cordova",
     "segment": "mobile",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://cordova.apache.org/"
   },
   {
     "label": "MobX",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://mobx.js.org/README.html"
   },
   {
     "label": "Context API",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://www.freecodecamp.org/news/react-context-api-explained-with-examples/"
   },
   {
     "label": "zustand",
     "segment": "common",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://zustand-demo.pmnd.rs/"
   },
   {
     "label": "xstate",
     "segment": "frontend",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://xstate.js.org/"
   },
   {
     "label": "redux",
     "segment": "common",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://redux.js.org/"
   },
   {
     "label": "react-i18next/i18next",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://react.i18next.com/"
   },
   {
     "label": "react-intl",
     "segment": "frontend",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://formatjs.io/docs/react-intl/"
   },
   {
     "label": "react-hook-form",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://react-hook-form.com/"
   },
   {
     "label": "formik",
     "segment": "frontend",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://formik.org/"
   },
   {
     "label": "zod",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://zod.dev/"
   },
   {
     "label": "yup",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://github.com/jquense/yup"
   },
   {
     "label": "tailwind",
     "segment": "frontend",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://tailwindcss.com/"
   },
   {
     "label": "CSS Modules",
     "segment": "frontend",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://github.com/css-modules/css-modules"
   },
   {
     "label": "SCSS",
     "segment": "frontend",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://sass-lang.com/"
   },
   {
     "label": "StyleSheet API",
     "segment": "mobile",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://reactnative.dev/docs/stylesheet"
   },
   {
     "label": "headless-ui",
     "segment": "frontend",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://headlessui.com/"
   },
   {
     "label": "radix",
     "segment": "frontend",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://www.radix-ui.com/"
   },
   {
     "label": "react-native-paper",
     "segment": "mobile",
-    "ring": "trial"
+    "ring": "trial",
+    "link": "https://reactnativepaper.com/"
   },
   {
     "label": "unistyles",
     "segment": "frontend",
-    "ring": "assess"
+    "ring": "assess",
+    "link": "https://www.unistyl.es/start/introduction/"
   },
   {
     "label": "shadcn",
     "segment": "frontend",
-    "ring": "assess"
+    "ring": "assess",
+    "link": "https://ui.shadcn.com/"
   },
   {
     "label": "tamagui",
     "segment": "frontend",
-    "ring": "assess"
+    "ring": "assess",
+    "link": "https://tamagui.dev/"
   },
   {
     "label": "@mui",
     "segment": "frontend",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://mui.com/"
   },
   {
     "label": "styled-components",
     "segment": "frontend",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://styled-components.com/"
   },
   {
     "label": "CSS in JS",
     "segment": "frontend",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://cssinjs.org/"
   },
   {
     "label": "Native Base",
     "segment": "mobile",
-    "ring": "hold"
+    "ring": "hold",
+    "link": "https://nativebase.io/"
   },
   {
     "label": "axios",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://axios-http.com/docs/intro"
   },
   {
     "label": "apollo-client",
     "segment": "frontend",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://www.apollographql.com/docs/react/"
   },
   {
     "label": "@tenstack/react-query",
     "segment": "common",
-    "ring": "adopt"
+    "ring": "adopt",
+    "link": "https://tanstack.com/query/latest"
   },
   {
     "label": "graphql.tada",
     "segment": "frontend",
-    "ring": "assess"
+    "ring": "assess",
+    "link": "https://gql-tada.0no.co/"
   },
   {
     "label": "trpc",
     "segment": "frontend",
-    "ring": "assess"
+    "ring": "assess",
+    "link": "https://trpc.io/"
   }
 ]
