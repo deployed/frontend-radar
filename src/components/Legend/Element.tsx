@@ -4,7 +4,7 @@ import {useTechContext} from '../../context/Context';
 import './legend.css';
 
 interface ElementProps {
-  element: {index: number; label: string};
+  element: {index: number; label: string; link?: string};
   color: string;
 }
 
@@ -18,7 +18,10 @@ const Element = ({element, color}: ElementProps) => {
         style={{
           backgroundColor: techClicked === element.index ? color : '#fff',
         }}
-        onClick={() => setTechClicked(element.index)}>
+        onClick={() => {
+          element.link ? window.open(element.link) : null;
+        }}
+        onMouseEnter={() => setTechClicked(element.index)}>
         {element.index + 1}. {element.label}
       </li>
     </div>

@@ -13,6 +13,7 @@ type SegmentProps = {
         elements: {
           label: string;
           index: number;
+          link?: string;
         }[];
       };
     };

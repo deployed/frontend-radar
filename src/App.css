@@ -6,11 +6,10 @@
   background-color: #222435;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .header-container {
   display: flex;
+  padding-right: 20px;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
@@ -31,6 +30,7 @@
   background-color: #2ea4ff;
   color: #fff;
   font-size: 20px;
+  text-decoration: none;
   transition:
     background-color 0.3s,
     color 0.3s;
@@ -43,6 +43,7 @@
   background-color: #ff973c;
   color: #fff;
   font-size: 20px;
+  text-decoration: none;
   transition:
     background-color 0.3s,
     color 0.3s;
@@ -52,6 +53,15 @@
   display: flex;
   flex-direction: row;
   height: 100%;
+}
+
+.rad-content {
+  display: flex;
+  flex: 1;
+  margin-top: '80px';
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 @media (max-width: 850px) {
