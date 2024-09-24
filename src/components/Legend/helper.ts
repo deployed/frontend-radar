@@ -1,6 +1,6 @@
 type segments = {label: string; slug: string; color: string}[];
 type rings = {label: string; slug: string}[];
-type elements = {label: string; segment: string; ring: string}[];
+type elements = {label: string; segment: string; ring: string; link?: string}[];
 
 type GroupedElements = {
   [segmentSlug: string]: {
@@ -9,7 +9,7 @@ type GroupedElements = {
     rings: {
       [ringSlug: string]: {
         label: string;
-        elements: {label: string; index: number}[];
+        elements: {label: string; index: number; link?: string}[];
       };
     };
   };
@@ -37,13 +37,12 @@ export const groupElements = (
     });
   });
 
-  // Group elements by segment and ring
   elements.forEach((element, index) => {
     const segment = grouped[element.segment];
     if (segment) {
       const ring = segment.rings[element.ring];
       if (ring) {
-        ring.elements.push({label: element.label, index: index});
+        ring.elements.push({label: element.label, index: index, link: element.link});
       }
     }
   });
