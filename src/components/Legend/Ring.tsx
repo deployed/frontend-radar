@@ -9,6 +9,7 @@ type RingProps = {
     elements: {
       label: string;
       index: number;
+      link?: string;
     }[];
   };
   color: string;
