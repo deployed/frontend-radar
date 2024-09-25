@@ -67,7 +67,7 @@
 @media (max-width: 850px) {
   .app-content {
     flex-direction: column-reverse;
-    gap: 100px;
+    gap: 50px;
   }
 }
 

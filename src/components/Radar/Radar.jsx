@@ -49,7 +49,7 @@ const Radar = ({options, segments, rings, elements}) => {
             <text
               fontSize={'30px'}
               text-anchor="middle"
-              fill="#555"
+              fill="black"
               x={radarDiagram.options.baseDimension / 2}
               y={radarDiagram.options.baseDimension / 2 - ringAxis.j + 60}
               dy="-0.5em">

@@ -25,7 +25,13 @@ const definitions = [
 
 export const Definitions = () => {
   return definitions.map((item) => (
-    <div style={{paddingTop: '10px', paddingLeft: '20px', paddingRight: '20px'}}>
+    <div
+      style={{
+        paddingTop: '10px',
+        paddingLeft: '20px',
+        paddingRight: '20px',
+        paddingBottom: '10px',
+      }}>
       <div style={{fontWeight: 'bold', textAlign: 'center', fontSize: '15px'}}>{item.title}</div>
       <div style={{fontSize: '14px'}}>{item.definition}</div>
     </div>

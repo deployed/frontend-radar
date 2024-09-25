@@ -6,7 +6,7 @@
 .segment-container {
   padding: 5px;
   border-radius: 20px;
-  background-color: #f7f8fb;
+  background-color: #f1f4f9;
 }
 
 .rings-container {
@@ -50,5 +50,5 @@
 
 .default-label {
   font-size: 18px;
-  color: #e6e6e6;
+  color: #e7eaf1;
 }

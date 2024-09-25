@@ -25,14 +25,7 @@ export const RadarContent = ({segments, rings, elements, title}: Data) => {
 
   return (
     <div className="app-content">
-      <div
-        style={{
-          backgroundColor: '#f1f4f9',
-          paddingTop: '80px',
-          flex: 1,
-          overflowY: 'scroll',
-          height: '100vh',
-        }}>
+      <div className="radar-content-container">
         {title ? (
           <div
             style={{
@@ -44,8 +37,10 @@ export const RadarContent = ({segments, rings, elements, title}: Data) => {
             {title}
           </div>
         ) : null}
-        <Legend segments={segments} rings={rings} elements={elements} />
-        <Definitions />
+        <div>
+          <Legend segments={segments} rings={rings} elements={elements} />
+          <Definitions />
+        </div>
       </div>
       <Radar options={radarConfig} segments={segments} rings={rings} elements={elements} />
     </div>

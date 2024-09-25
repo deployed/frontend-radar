@@ -1,13 +1,16 @@
 .radar-container {
-  max-height: calc(110vh - 150px);
+  max-height: calc(100vh - 80px);
   transition: height 1s;
   display: flex;
   color: '#ccc';
+  flex: 1;
+  margin-top: 80px;
+  overflow-y: hidden;
 }
 
 .radar-container svg {
   width: auto;
-  height: 90vh;
+  height: 100%;
   margin: auto;
 }
 
@@ -45,4 +48,25 @@
 
 .radar__dot:hover .dot {
   transform: scale(2);
+}
+
+.radar-content-container {
+  background-color: #ebeef4;
+  flex: 1;
+  padding-top: 80px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+}
+
+@media (max-width: 850px) {
+  .radar-container {
+    margin-top: 20px;
+    overflow-y: none;
+    max-height: none;
+  }
+
+  .radar-content-container {
+    padding-top: 20px;
+    height: 100%;
+  }
 }
