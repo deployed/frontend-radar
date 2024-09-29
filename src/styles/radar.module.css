@@ -2,7 +2,7 @@
     max-height: calc(100vh - 80px);
     transition: height 1s;
     display: flex;
-    color: '#ccc';
+    color: #ccc;
     flex: 1;
     margin-top: 80px;
     overflow-y: hidden;
@@ -53,7 +53,7 @@
   
 @media (max-width: 850px) {
     .radarContainer {
-      margin-top: 20px;
+      margin-top: 80px;
       overflow-y: none;
       max-height: none;
     }

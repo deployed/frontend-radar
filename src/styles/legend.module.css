@@ -1,0 +1,63 @@
+.legend{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.segmentLabel {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.segmentContainer {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #f1f4f9;
+}
+  
+.ringsContainer {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-around;
+}
+  
+.ringContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 260px;
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+  
+.ringLabel {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+  
+.elementsList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+}
+  
+.elementItem {
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.active {
+    color: #fff;
+}
+  
+.defaultLabel {
+    font-size: 18px;
+    color: #e7eaf1;
+}
+  
