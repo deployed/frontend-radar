@@ -1,13 +1,4 @@
-.radar-container {
-  max-height: calc(100vh - 80px);
-  transition: height 1s;
-  display: flex;
-  color: '#ccc';
-  flex: 1;
-  margin-top: 80px;
-  overflow-y: hidden;
-}
-
+/* 
 .radar-container svg {
   width: auto;
   height: 100%;
@@ -37,9 +28,6 @@
   transform-origin: 500px 500px;
 }
 
-.radar__ring {
-  transition: r 0.5s;
-}
 
 .dot {
   transition: transform 1s;
@@ -57,7 +45,7 @@
   height: calc(100vh - 80px);
   overflow-y: scroll;
 }
-
+*/
 @media (max-width: 850px) {
   .radar-container {
     margin-top: 20px;
@@ -69,4 +57,14 @@
     padding-top: 20px;
     height: 100%;
   }
+} 
+
+
+
+.radar-content-container {
+  background-color: #ebeef4;
+  flex: 1;
+  padding-top: 80px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
 }
