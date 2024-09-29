@@ -6,7 +6,7 @@
 .segment-container {
   padding: 5px;
   border-radius: 20px;
-  background-color: #f7f8fb;
+  background-color: #f1f4f9;
 }
 
 .rings-container {
@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-height: 300px;
+  min-height: 260px;
   padding: 2px;
   background-color: #fff;
   border-radius: 20px;
@@ -39,6 +39,7 @@
 
 .element-item {
   font-size: 18px;
+  line-height: 22px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -49,5 +50,5 @@
 
 .default-label {
   font-size: 18px;
-  color: #e6e6e6;
+  color: #e7eaf1;
 }

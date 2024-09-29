@@ -22,7 +22,7 @@ const Radar = ({options, segments, rings, elements}) => {
   }, [options, segments, rings, elements]);
 
   return (
-    <div className="radar-container" style={{flex: 1}}>
+    <div className="radar-container" style={{flex: 1, marginTop: '80px'}}>
       <svg
         id="radar-plot"
         viewBox={`${-padding} ${-padding} ${
@@ -49,7 +49,7 @@ const Radar = ({options, segments, rings, elements}) => {
             <text
               fontSize={'30px'}
               text-anchor="middle"
-              fill="#555"
+              fill="black"
               x={radarDiagram.options.baseDimension / 2}
               y={radarDiagram.options.baseDimension / 2 - ringAxis.j + 60}
               dy="-0.5em">
@@ -107,16 +107,12 @@ const Radar = ({options, segments, rings, elements}) => {
           return (
             <g
               onMouseEnter={() => setTechClicked(index)}
+              onClick={() => window.open(dot.link)}
               key={dot.label}
               data-tooltip-id={`my-tooltip-${index}`}
               className="radar__dot"
               style={{transform: `translate(${x}px, ${y}px)`}}>
-              <circle
-                className="dot"
-                r={15}
-                stroke={'#aaa'}
-                strokeWidth={1}
-                fill={dot.color}></circle>
+              <circle className="dot" r={15} fill={dot.color}></circle>
 
               <text y={-10} x={-1} textAnchor="middle" className="radar__dot__label">
                 {index + 1}
