@@ -1,9 +1,9 @@
 import React from 'react';
-
+import {dataOverviewStyles} from '../styles'
 import {Definitions} from './Definitions';
 import Legend from './Legend/Legend';
-import Radar from './Radar/Radar';
-
+import Radar from './Radar';
+import './radar.css'
 type Data = {
   title?: string;
   segments: {label: string; slug: string; color: string}[];
@@ -16,7 +16,7 @@ type Data = {
   }[];
 };
 
-export const RadarContent = ({segments, rings, elements, title}: Data) => {
+export const DataOverview = ({segments, rings, elements, title}: Data) => {
   const radarConfig = {
     totalAngle: Math.PI * 2,
     padding: -5,
@@ -24,16 +24,10 @@ export const RadarContent = ({segments, rings, elements, title}: Data) => {
   };
 
   return (
-    <div className="app-content">
-      <div className="radar-content-container">
+    <div className={dataOverviewStyles.appContent}>
+      <div className={dataOverviewStyles.legendContainer}>
         {title ? (
-          <div
-            style={{
-              paddingLeft: '20px',
-              paddingTop: '20px',
-              fontSize: '25px',
-              fontWeight: 'bold',
-            }}>
+          <div className={dataOverviewStyles.title}>
             {title}
           </div>
         ) : null}

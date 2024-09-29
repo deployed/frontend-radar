@@ -1,0 +1,15 @@
+
+@media (max-width: 850px) {
+  .radar-content-container {
+    padding-top: 20px;
+    height: 100%;
+  }
+} 
+
+.radar-content-container {
+  background-color: #ebeef4;
+  flex: 1;
+  padding-top: 80px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+}
