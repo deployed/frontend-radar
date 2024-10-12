@@ -1,13 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
-import  {radarStyles} from '../styles';
 
 // TODO: Copy the class Radar from 'radar-diagram' and add Typescript there. After that change the Radar component - add Typescript.
 import RadarDiagram from 'radar-diagram';
 import {Tooltip} from 'react-tooltip';
 
 import {useTechContext} from '../context/Context';
+import {radarStyles} from '../styles';
 
- console.log(radarStyles);
 const padding = 50;
 
 const Radar = ({options, segments, rings, elements}) => {
@@ -23,7 +22,7 @@ const Radar = ({options, segments, rings, elements}) => {
   }, [options, segments, rings, elements]);
 
   return (
-    <div className={radarStyles.radarContainer} >
+    <div className={radarStyles.radarContainer}>
       <svg
         id="radar-plot"
         viewBox={`${-padding} ${-padding} ${

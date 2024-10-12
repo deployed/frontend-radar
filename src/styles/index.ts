@@ -1,6 +1,5 @@
-import dataOverviewStyles from './dataOverview.module.css';
-import radarStyles from './radar.module.css';
-import legendStyles from './legend.module.css';
-import definitionsStyles from './definitions.module.css';
-import headerStyles from './header.module.css';
-export { dataOverviewStyles, radarStyles,definitionsStyles, legendStyles , headerStyles};
+export {default as dataOverviewStyles} from './dataOverview.module.css';
+export {default as radarStyles} from './radar.module.css';
+export {default as legendStyles} from './legend.module.css';
+export {default as definitionsStyles} from './definitions.module.css';
+export {default as headerStyles} from './header.module.css';

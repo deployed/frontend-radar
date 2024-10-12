@@ -1,6 +1,9 @@
 import React from 'react';
+
+import cn from 'classnames';
+
 import {useTechContext} from '../../context/Context';
-import { legendStyles } from '../../styles';
+import {legendStyles} from '../../styles';
 
 interface ElementProps {
   element: {index: number; label: string; link?: string};
@@ -13,7 +16,10 @@ const Element = ({element, color}: ElementProps) => {
   return (
     <div>
       <li
-        className={`${legendStyles.elementItem} ${techClicked === element.index ? legendStyles.active : ''}`}
+        className={cn(
+          legendStyles.elementItem,
+          techClicked === element.index && legendStyles.active,
+        )}
         style={{
           backgroundColor: techClicked === element.index ? color : '#fff',
         }}

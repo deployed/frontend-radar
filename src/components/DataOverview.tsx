@@ -1,9 +1,10 @@
 import React from 'react';
-import {dataOverviewStyles} from '../styles'
+
+import {dataOverviewStyles} from '../styles';
 import {Definitions} from './Definitions';
 import Legend from './Legend/Legend';
 import Radar from './Radar';
-import './radar.css'
+
 type Data = {
   title?: string;
   segments: {label: string; slug: string; color: string}[];
@@ -26,11 +27,7 @@ export const DataOverview = ({segments, rings, elements, title}: Data) => {
   return (
     <div className={dataOverviewStyles.appContent}>
       <div className={dataOverviewStyles.legendContainer}>
-        {title ? (
-          <div className={dataOverviewStyles.title}>
-            {title}
-          </div>
-        ) : null}
+        {title ? <div className={dataOverviewStyles.title}>{title}</div> : null}
         <div>
           <Legend segments={segments} rings={rings} elements={elements} />
           <Definitions />
