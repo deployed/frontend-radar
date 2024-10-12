@@ -30,12 +30,6 @@ type RadarContentProps = {
 export const foo = () => {};
 
 export const RadarContent = ({team}: RadarContentProps) => {
-  const radarConfig = {
-    totalAngle: Math.PI * 2,
-    padding: -5,
-    minPlotRadius: 100,
-  };
-
   const {segments, rings, elements} = data[team] || {};
 
   return (
@@ -48,7 +42,7 @@ export const RadarContent = ({team}: RadarContentProps) => {
         }}>
         <Legend segments={segments} rings={rings} elements={elements} />
       </div>
-      <Radar options={radarConfig} segments={segments} rings={rings} elements={elements} />
+      <Radar segments={segments} rings={rings} elements={elements} />
     </div>
   );
 };
