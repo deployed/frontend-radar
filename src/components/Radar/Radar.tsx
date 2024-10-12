@@ -1,25 +1,24 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-// TODO: Copy the class Radar from 'radar-diagram' and add Typescript there. After that change the Radar component - add Typescript.
-import RadarDiagram from 'radar-diagram';
 import {Tooltip} from 'react-tooltip';
 
 import {useTechContext} from '../../context/Context';
+import RadarDiagram from '../../radar-diagram/radar';
+import {RadarProps} from '../types';
 import './radar.css';
 
 const padding = 50;
 
-const Radar = ({options, segments, rings, elements}) => {
+const Radar = ({segments, rings, elements}: RadarProps) => {
   let svgRef = useRef(null);
-  const [radarDiagram, setRadarDiagram] = useState(
-    new RadarDiagram(options, {elements, rings, segments}),
-  );
+
+  const [radarDiagram, setRadarDiagram] = useState(new RadarDiagram({elements, rings, segments}));
   const {techClicked, setTechClicked} = useTechContext();
 
   useEffect(() => {
-    const radar = new RadarDiagram(options, {elements, rings, segments});
+    const radar = new RadarDiagram({elements, rings, segments});
     setRadarDiagram(radar);
-  }, [options, segments, rings, elements]);
+  }, [segments, rings, elements]);
 
   return (
     <div className="radar-container" style={{flex: 1}}>
@@ -29,7 +28,7 @@ const Radar = ({options, segments, rings, elements}) => {
           radarDiagram.options.baseDimension + 2 * padding
         } ${radarDiagram.options.baseDimension + 2 * padding}`}
         xmlns="http://www.w3.org/2000/svg"
-        ref={(el) => (svgRef = el)}>
+        ref={svgRef}>
         <circle
           r={radarDiagram.options.baseDimension / 2}
           cx={radarDiagram.options.baseDimension / 2}
@@ -97,7 +96,7 @@ const Radar = ({options, segments, rings, elements}) => {
         ))}
 
         {radarDiagram.dots.map((dot, index) => {
-          const getRandomOffset = (range) => (Math.random() - 0.5) * 2 * range;
+          const getRandomOffset = (range: number) => (Math.random() - 0.5) * 2 * range;
 
           const range = 10;
 
@@ -128,7 +127,7 @@ const Radar = ({options, segments, rings, elements}) => {
       <Tooltip
         style={{fontSize: '12px'}}
         id={`my-tooltip-${techClicked}`}
-        content={techClicked >= 0 && elements[techClicked].label}
+        content={techClicked >= 0 ? elements[techClicked].label : undefined}
         isOpen={techClicked >= 0 ? true : false}
       />
     </div>
