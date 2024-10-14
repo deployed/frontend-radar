@@ -4,12 +4,6 @@
  * Class to generate Layout for Radar diagram
  */
 
-type OptionsProps = {
-  minPlotRadius: number;
-  padding: number;
-  totalAngle: number;
-};
-
 type Ring = {label: string; slug: string};
 
 type Segment = {
@@ -44,11 +38,11 @@ interface Axis {
 }
 
 type Options = {
-  totalAngle: number;
   baseDimension: number;
   padding: number;
   minPlotRadius: number;
-} & OptionsProps;
+  totalAngle: number;
+};
 
 type RadarProps = {
   elements: Element[];
@@ -72,15 +66,13 @@ export default class Radar {
     this.segments = segments;
     this.elements = elements;
 
-    // Extend options
-    const defaultOptions = {
+    this.options = {
       totalAngle: Math.PI * 2,
       padding: -5,
       minPlotRadius: 100,
       baseDimension: 1000,
     };
 
-    this.options = {...defaultOptions};
     this.maxPlotRadius = this.options.baseDimension / 2 - this.options.padding;
 
     // Calculate metadata
