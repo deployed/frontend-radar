@@ -1,46 +1,46 @@
 import React from 'react';
 
-import {Team} from '../App';
-import elementsBack from '../data-back/elements.json';
-import ringsBack from '../data-back/rings.json';
-import segmentsBack from '../data-back/segments.json';
-import elementsFront from '../data-front/elements.json';
-import ringsFront from '../data-front/rings.json';
-import segmentsFront from '../data-front/segments.json';
+import {Definitions} from './Definitions';
 import Legend from './Legend/Legend';
 import Radar from './Radar/Radar';
 
-const data = {
-  front: {
-    segments: segmentsFront,
-    rings: ringsFront,
-    elements: elementsFront,
-  },
-  back: {
-    segments: segmentsBack,
-    rings: ringsBack,
-    elements: elementsBack,
-  },
+type Data = {
+  title?: string;
+  segments: {label: string; slug: string; color: string}[];
+  rings: {label: string; slug: string}[];
+  elements: {
+    label: string;
+    segment: string;
+    ring: string;
+    link?: string;
+  }[];
 };
 
-type RadarContentProps = {
-  team: Team;
-};
-
-export const foo = () => {};
-
-export const RadarContent = ({team}: RadarContentProps) => {
-  const {segments, rings, elements} = data[team] || {};
+export const RadarContent = ({segments, rings, elements, title}: Data) => {
+  const radarConfig = {
+    totalAngle: Math.PI * 2,
+    padding: -5,
+    minPlotRadius: 100,
+  };
 
   return (
     <div className="app-content">
-      <div
-        style={{
-          backgroundColor: '#f1f4f9',
-          padding: '5px',
-          flex: 1,
-        }}>
-        <Legend segments={segments} rings={rings} elements={elements} />
+      <div className="radar-content-container">
+        {title ? (
+          <div
+            style={{
+              paddingLeft: '20px',
+              paddingTop: '20px',
+              fontSize: '25px',
+              fontWeight: 'bold',
+            }}>
+            {title}
+          </div>
+        ) : null}
+        <div>
+          <Legend segments={segments} rings={rings} elements={elements} />
+          <Definitions />
+        </div>
       </div>
       <Radar segments={segments} rings={rings} elements={elements} />
     </div>
