@@ -42,7 +42,7 @@ export const RadarContent = ({segments, rings, elements, title}: Data) => {
           <Definitions />
         </div>
       </div>
-      <Radar options={radarConfig} segments={segments} rings={rings} elements={elements} />
+      <Radar segments={segments} rings={rings} elements={elements} />
     </div>
   );
 };
