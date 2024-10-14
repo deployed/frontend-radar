@@ -74,15 +74,9 @@ export default class Radar {
     };
 
     this.maxPlotRadius = this.options.baseDimension / 2 - this.options.padding;
-
-    // Calculate metadata
     this.metaData = this.getMetaData();
-
-    // Calculate Axes placement
     this.segmentAxes = this.getSegmentAxes();
     this.ringAxes = this.getRingAxes();
-
-    // Calculate dot placement
     this.dots = this.getDots();
   }
 
