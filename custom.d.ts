@@ -3,4 +3,6 @@ declare module '*.svg' {
   export default content;
 }
 
-declare module "*.module.css";
+declare module '*.module.css';
+
+declare module '*.module.scss';
