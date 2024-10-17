@@ -8,6 +8,14 @@ export default defineConfig({
     modules: {
       localsConvention: 'camelCase',
     },
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        additionalData: `
+          @use "/src/mixins" as *;
+        `,
+      },
+    },
   },
   scss: {
     modules: {
