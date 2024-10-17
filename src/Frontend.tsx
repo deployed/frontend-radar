@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Header} from './components/Header/Header';
-import {RadarContent} from './components/RadarContent';
+import {Header} from './components/Header';
+import {DataOverview} from './components/DataOverview';
 import elementsFront from './data-front/elements.json';
 import ringsFront from './data-front/rings.json';
 import segmentsFront from './data-front/segments.json';
@@ -16,7 +16,7 @@ export const Frontend = () => {
   return (
     <div>
       <Header />
-      <RadarContent
+      <DataOverview
         title="Frontend Team"
         segments={frontendData.segments}
         rings={frontendData.rings}

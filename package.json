@@ -7,12 +7,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "serve": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prettier": "npx prettier . --write './**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "classnames": "^2.5.1",
     "gsap": "^3.12.5",
     "radar-diagram": "^1.1.1",
     "react": "^18.2.0",
@@ -30,8 +32,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "prettier": "3.3.3",
+    "sass-embedded": "^1.80.1",
     "typescript": "^5.5.4",
-    "vite": "^5.1.0"
+    "vite": "^5.4.9"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"
