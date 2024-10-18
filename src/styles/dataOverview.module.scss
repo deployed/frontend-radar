@@ -1,0 +1,31 @@
+.appContent {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  @include md {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+}
+
+.legendContainer {
+  background-color: #ebeef4;
+  flex: 1;
+  padding-top: 80px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+
+  @include md {
+    padding-top: 20px;
+    height: 100%;
+  }
+}
+
+.title {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 25px;
+  font-weight: bold;
+}
