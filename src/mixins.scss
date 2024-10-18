@@ -1,5 +1,5 @@
 $screen-sm-min: 550px;
-$screen-md-min: 850px;
+$screen-md-max: 850px;
 
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
@@ -8,7 +8,7 @@ $screen-md-min: 850px;
 }
 
 @mixin md {
-  @media (min-width: #{$screen-md-min}) {
+  @media (max-width: #{$screen-md-max}) {
     @content;
   }
 }

@@ -1,11 +1,3 @@
-// $screen-md-min: 850px;
-
-// @mixin md {
-//   @media (min-width: #{$screen-md-min}) {
-//     @content;
-//   }
-// }
-
 .radarContainer {
   max-height: calc(100vh - 80px);
   transition: height 1s;

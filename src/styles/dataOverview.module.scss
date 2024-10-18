@@ -1,12 +1,5 @@
-// $screen-sm-min: 850px;
-
-// @mixin md {
-//   @media (min-width: #{$screen-sm-min}) {
-//     @content;
-//   }
-// }
-
 .appContent {
+  padding-top: 80px;
   display: flex;
   flex-direction: row;
   height: 100%;
