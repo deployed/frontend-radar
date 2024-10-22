@@ -1,4 +1,4 @@
-export type LegendProps = {
+export type RadarProps = {
   segments: Segment[];
   rings: Ring[];
   elements: Element[];

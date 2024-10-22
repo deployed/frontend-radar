@@ -3,7 +3,7 @@ import React from 'react';
 import {dataOverviewStyles} from '../styles';
 import {Definitions} from './Definitions';
 import Legend from './Legend/Legend';
-import Radar from './Radar';
+import Radar from './Radar/Radar';
 
 type Data = {
   title?: string;
@@ -33,7 +33,7 @@ export const DataOverview = ({segments, rings, elements, title}: Data) => {
           <Definitions />
         </div>
       </div>
-      <Radar options={radarConfig} segments={segments} rings={rings} elements={elements} />
+      <Radar segments={segments} rings={rings} elements={elements} />
     </div>
   );
 };

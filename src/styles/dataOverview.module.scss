@@ -1,11 +1,11 @@
 .appContent {
-  padding-top: 80px;
   display: flex;
   flex-direction: row;
   height: 100%;
 
   @include md {
     flex-direction: column-reverse;
+    padding-top: 80px;
     gap: 50px;
   }
 }

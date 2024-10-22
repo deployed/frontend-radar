@@ -1,10 +1,11 @@
 import React from 'react';
-import { legendStyles } from '../../styles';
+
+import {legendStyles} from '../../styles';
+import {RadarProps} from '../types';
 import Segment from './Segment';
 import {groupElements} from './helper';
-import {LegendProps} from './types';
 
-const Legend = ({segments, rings, elements}: LegendProps) => {
+const Legend = ({segments, rings, elements}: RadarProps) => {
   const groupedData = groupElements(elements, segments, rings);
   const groupedDataSegments = Object.keys(groupedData);
 
