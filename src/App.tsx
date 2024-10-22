@@ -1,8 +1,6 @@
 import React from 'react';
 
 import {Routes, Route, Navigate} from 'react-router-dom';
-
-import './App.css';
 import {Backend} from './Backend';
 import {Frontend} from './Frontend';
 import {TechProvider} from './context/Context';

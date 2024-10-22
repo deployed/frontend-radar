@@ -4,8 +4,8 @@ import {Tooltip} from 'react-tooltip';
 
 import {useTechContext} from '../../context/Context';
 import RadarDiagram from '../../radar-diagram/radar';
+import {radarStyles} from '../../styles';
 import {RadarProps} from '../types';
-import './radar.css';
 
 const padding = 50;
 
@@ -21,7 +21,7 @@ const Radar = ({segments, rings, elements}: RadarProps) => {
   }, [segments, rings, elements]);
 
   return (
-    <div className="radar-container" style={{flex: 1, marginTop: '80px'}}>
+    <div className={radarStyles.radarContainer}>
       <svg
         id="radar-plot"
         viewBox={`${-padding} ${-padding} ${
@@ -37,7 +37,7 @@ const Radar = ({segments, rings, elements}: RadarProps) => {
         {radarDiagram.ringAxes.map((ringAxis, index) => (
           <g key={ringAxis.slug}>
             <circle
-              className="radar__ring"
+              className={radarStyles.ringCircle}
               cx={radarDiagram.options.baseDimension / 2}
               cy={radarDiagram.options.baseDimension / 2}
               r={ringAxis.j}
@@ -59,7 +59,7 @@ const Radar = ({segments, rings, elements}: RadarProps) => {
         {radarDiagram.segmentAxes.map((segAxis, idx) => (
           <g key={segAxis.slug}>
             <line
-              className="radar__segment-axis"
+              className={radarStyles.segmentAxis}
               x1={segAxis.axis.x1}
               x2={segAxis.axis.x2}
               y1={segAxis.axis.y1}
@@ -68,7 +68,7 @@ const Radar = ({segments, rings, elements}: RadarProps) => {
               strokeWidth={1}></line>
 
             <path
-              className="radar__segment__path"
+              className={radarStyles.segmentPath}
               id={'label-path-' + segAxis.slug}
               d={radarDiagram.getSegmentLabelPathBase()}
               fill={'none'}
@@ -109,11 +109,11 @@ const Radar = ({segments, rings, elements}: RadarProps) => {
               onClick={() => window.open(dot.link)}
               key={dot.label}
               data-tooltip-id={`my-tooltip-${index}`}
-              className="radar__dot"
+              className={radarStyles.dotContainer}
               style={{transform: `translate(${x}px, ${y}px)`}}>
-              <circle className="dot" r={15} fill={dot.color}></circle>
+              <circle className={radarStyles.dotCircle} r={15} fill={dot.color}></circle>
 
-              <text y={-10} x={-1} textAnchor="middle" className="radar__dot__label">
+              <text y={-10} x={-1} textAnchor="middle" className={radarStyles.dotLabel}>
                 {index + 1}
               </text>
             </g>

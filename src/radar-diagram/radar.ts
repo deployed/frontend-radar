@@ -59,7 +59,7 @@ export default class Radar {
   metaData: MetaData;
   segmentAxes: (Segment & {i: number; j: number; axis: Axis})[];
   ringAxes: (Ring & {i: number; j: number})[];
-  dots: (Element & Coordinates & {r: number; color: string})[];
+  dots: (Element & Coordinates & {r: number; color: string; link?: string})[];
 
   constructor({elements, rings, segments}: RadarProps) {
     this.rings = rings;
