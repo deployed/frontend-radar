@@ -1,11 +1,12 @@
 import React from 'react';
-import {definitionsStyles} from '../styles'
+
+import {definitionsStyles} from '../styles';
 
 const definitions = [
   {
     title: 'ADOPT',
     definition:
-      'Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Zalando production environment, low risk and recommended to be widely used.',
+      'Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Deployed production environment, low risk and recommended to be widely used.',
   },
   {
     title: 'TRIAL',
