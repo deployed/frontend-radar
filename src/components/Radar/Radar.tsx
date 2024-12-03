@@ -57,38 +57,38 @@ const Radar = ({segments, rings, elements}: RadarProps) => {
           </g>
         ))}
         {radarDiagram.segmentAxes.map((segAxis, idx) => (
-          <g key={segAxis.slug}>
+          <g
+            key={segAxis.slug}
+            transform={`rotate(${
+              (-idx * radarDiagram.options.totalAngle * 180) /
+              (Math.PI * radarDiagram.segments.length)
+            } ${radarDiagram.options.baseDimension / 2} ${radarDiagram.options.baseDimension / 2})`}>
             <line
               className={radarStyles.segmentAxis}
               x1={segAxis.axis.x1}
               x2={segAxis.axis.x2}
               y1={segAxis.axis.y1}
               y2={segAxis.axis.y2}
-              stroke={'#aaa'}
+              stroke="#aaa"
               strokeWidth={1}></line>
 
             <path
               className={radarStyles.segmentPath}
-              id={'label-path-' + segAxis.slug}
+              id={`label-path-${segAxis.slug}`}
               d={radarDiagram.getSegmentLabelPathBase()}
-              fill={'none'}
+              fill="none"
               stroke={segAxis.color}
-              strokeWidth={15}
-              style={{
-                transform: `rotate(${
-                  (-idx * radarDiagram.options.totalAngle) / radarDiagram.segments.length
-                }rad)`,
-              }}></path>
+              strokeWidth={15}></path>
 
             <text>
               <textPath
                 href={`#label-path-${segAxis.slug}`}
-                fill={'#555'}
-                fontWeight={'800'}
+                fill="#555"
+                fontWeight="800"
                 fontSize={`${radarDiagram.options.totalAngle / 3 + 0.5}em`}
-                fontFamily={'Sans-serif'}
-                startOffset={'50%'}
-                textAnchor={'middle'}>
+                fontFamily="Sans-serif"
+                startOffset="50%"
+                textAnchor="middle">
                 {segAxis.label}
               </textPath>
             </text>

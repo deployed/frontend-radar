@@ -26,10 +26,14 @@ const definitions = [
 ];
 
 export const Definitions = () => {
-  return definitions.map((item) => (
-    <div className={definitionsStyles.definitionsContainers}>
-      <div className={definitionsStyles.title}>{item.title}</div>
-      <div className={definitionsStyles.definition}>{item.definition}</div>
+  return (
+    <div className={definitionsStyles.definitionsContainer}>
+      {definitions.map((item, index) => (
+        <div key={index} className={definitionsStyles.definitionContainers}>
+          <div className={definitionsStyles.title}>{item.title}</div>
+          <div className={definitionsStyles.definition}>{item.definition}</div>
+        </div>
+      ))}
     </div>
-  ));
+  );
 };

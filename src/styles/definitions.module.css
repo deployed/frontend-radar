@@ -1,16 +1,25 @@
 .definitionsContainer {
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.definitionContainer {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
 }
 
 .title {
-    font-weight: bold;
-    text-align: center;
-    font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
 }
 
-.ddefinition {
-    font-size: 14px;
+.definition {
+  font-size: 14px;
 }

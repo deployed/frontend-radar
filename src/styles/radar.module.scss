@@ -18,6 +18,10 @@
   width: auto;
   height: 100%;
   margin: auto;
+
+  @include md {
+    width: 500px;
+  }
 }
 
 .ringCircle {

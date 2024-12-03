@@ -113,7 +113,6 @@ export default class Radar {
   }
 
   getSegmentLabelPathD(startCoord: Coordinates, endCoord: Coordinates) {
-    console.log(startCoord, endCoord);
     return `M ${endCoord.x},${endCoord.y} A${this.maxPlotRadius},${this.maxPlotRadius} 0 0,1 ${startCoord.x},${startCoord.y}`;
   }
 
@@ -190,6 +189,7 @@ export default class Radar {
     idx: number,
     total: number,
   ) {
+    console.log(ring.i);
     const elemPerRow = Math.floor(ring.i / 30) + 2;
     // relIdx -> relative index
     // rel index repeats from 1 for every row after max per row reaches
