@@ -18,12 +18,6 @@ type Data = {
 };
 
 export const DataOverview = ({segments, rings, elements, title}: Data) => {
-  const radarConfig = {
-    totalAngle: Math.PI * 2,
-    padding: -5,
-    minPlotRadius: 100,
-  };
-
   return (
     <div className={dataOverviewStyles.appContent}>
       <div className={dataOverviewStyles.legendContainer}>

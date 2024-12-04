@@ -189,7 +189,6 @@ export default class Radar {
     idx: number,
     total: number,
   ) {
-    console.log(ring.i);
     const elemPerRow = Math.floor(ring.i / 30) + 2;
     // relIdx -> relative index
     // rel index repeats from 1 for every row after max per row reaches

@@ -21,8 +21,7 @@
   },
   {
     "label": "Playwright - nie usuwać",
-    "segment": "common",
-    "ring": "adopt",
-    "link": "https://playwright.dev/"
+    "segment": "framework",
+    "ring": "adopt"
   }
 ]
