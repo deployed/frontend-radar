@@ -18,5 +18,10 @@
     "label": "Z",
     "segment": "infrastructure",
     "ring": "trial"
+  },
+  {
+    "label": "Playwright - nie usuwać",
+    "segment": "framework",
+    "ring": "adopt"
   }
 ]

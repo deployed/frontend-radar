@@ -113,7 +113,6 @@ export default class Radar {
   }
 
   getSegmentLabelPathD(startCoord: Coordinates, endCoord: Coordinates) {
-    console.log(startCoord, endCoord);
     return `M ${endCoord.x},${endCoord.y} A${this.maxPlotRadius},${this.maxPlotRadius} 0 0,1 ${startCoord.x},${startCoord.y}`;
   }
 

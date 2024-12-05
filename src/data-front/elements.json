@@ -232,5 +232,23 @@
     "segment": "frontend",
     "ring": "assess",
     "link": "https://trpc.io/"
+  },
+  {
+    "label": "Playwright",
+    "segment": "frontend",
+    "ring": "adopt",
+    "link": "https://playwright.dev/"
+  },
+  {
+    "label": "Selenium",
+    "segment": "frontend",
+    "ring": "hold",
+    "link": "https://www.selenium.dev/"
+  },
+  {
+    "label": "Meastro",
+    "segment": "mobile",
+    "ring": "assess",
+    "link": "https://maestro.mobile.dev/"
   }
 ]
